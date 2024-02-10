@@ -28,8 +28,8 @@ def on_mouse_move(event):
 
         # Draw under the rectangle the size of the rectangle in pixels, the rectangle has a black background and the text is white
         text = f"{event.x - coord[0]} x {event.y - coord[1]}"
-        canvas.create_rectangle(coord[0] + 10, coord[1] + 10, coord[0] + 10 + len(text) * 8, coord[1] + 10 + 20, fill="black", outline="black")
-        canvas.create_text(coord[0] + 10, coord[1] + 10, text=text, fill="white", font="Arial 10", anchor="nw")
+        canvas.create_rectangle(coord[0] - 30, coord[1] - 30, coord[0] - 30 + len(text) * 8, coord[1] - 30 + 20, fill="black", outline="black")
+        canvas.create_text(coord[0] - 30, coord[1] - 30, text=text, fill="white", font="Arial 10", anchor="nw")
  
 
 def on_mouse_click(event):
@@ -82,7 +82,7 @@ def capture_screenshot():
     canvas.bind('<Motion>', on_mouse_move)
 
     # Bind the middle mouse button click event to the close function
-    canvas.bind('<Button-2>', lambda event: close())
+    canvas.bind('<Button-3>', lambda event: close())
 
     # Bind the left mouse button click down event to the on_mouse_click function
     canvas.bind('<ButtonPress-1>', on_mouse_click)

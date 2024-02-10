@@ -1,2 +1,5 @@
 .venv
-./screenshot.png
+screenshot.png
+build/
+dist/
+*.spec
